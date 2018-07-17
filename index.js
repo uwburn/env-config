@@ -28,4 +28,6 @@ module.exports = function (defaults, alloweds) {
             _.set(config, path, value);
         }
     }
+
+    return config;
 };
