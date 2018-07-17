@@ -1,0 +1,23 @@
+{
+  "name": "env-config",
+  "version": "0.0.1",
+  "description": "Environment variable based config module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uwburn/env-config.git"
+  },
+  "author": "Michele Tibaldi (tiboburn@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uwburn/env-config/issues"
+  },
+  "homepage": "https://github.com/uwburn/env-config#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "lodash": "^4.17.10"
+  }
+}
