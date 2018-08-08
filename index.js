@@ -12,14 +12,14 @@ module.exports = function (defaults, alloweds) {
         path = path.replace(/(_)([a-z])/g, (match, underscore, letter) => {
             return `.${letter}`;
         });
-        path = path.replace(/(-)([a-z])/, (match, dash, letter) => {
+        path = path.replace(/(-)([a-z])/g, (match, dash, letter) => {
             return letter.toUpperCase();
         });
-        path = path.replace(/(_)([0-9]+)/, (match, underscore, numbers) => {
+        path = path.replace(/(_)([0-9]+)/g, (match, underscore, numbers) => {
             return `[${numbers}]`;
         });
 
-        let zeroPath = path.replace(/\[[0-9]+\]/, "[0]");
+        let zeroPath = path.replace(/\[[0-9]+\]/g, "[0]");
         if (!alloweds || _.get(alloweds, zeroPath)) {
             let value = process.env[k];
 
