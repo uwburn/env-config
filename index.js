@@ -6,6 +6,11 @@ const _ = require("lodash");
 
 module.exports = function (defaults, alloweds) {
     let config = _.cloneDeep(defaults);
+    
+    if (!alloweds)
+        alloweds = {};
+    
+    _.merge(alloweds, defaults);
 
     for (let k in process.env) {
         let path = k.toLowerCase();
@@ -20,7 +25,7 @@ module.exports = function (defaults, alloweds) {
         });
 
         let zeroPath = path.replace(/\[[0-9]+\]/g, "[0]");
-        if (!alloweds || _.get(alloweds, zeroPath)) {
+        if (!alloweds || _.get(alloweds, zeroPath) !== undefined) {
             let value = process.env[k];
 
             debugDebug(`Overwriting ${path} with value ${value}`);
