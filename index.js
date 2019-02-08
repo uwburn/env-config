@@ -7,10 +7,8 @@ const _ = require("lodash");
 module.exports = function (defaults, alloweds) {
     let config = _.cloneDeep(defaults);
     
-    if (!alloweds)
-        alloweds = {};
-    
-    _.merge(alloweds, defaults);
+    if (alloweds)  
+        _.merge(alloweds, defaults);
 
     for (let k in process.env) {
         let path = k.toLowerCase();
